@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head><title>Factory Function</title></head>
+<body>
+    <h2>Inventory Management System</h2>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+<script>
+   var book=function(isbn,title,year,author){
+    var book={};
+    book.isbn=isbn;
+    book.title=title;
+    book.year=year;
+    book.author=author;
+    book.greeting=function(){
+        return("ISBN:"+book.isbn+"Title:"+book.title+"Year:"+book.year+"Author:"+book.author);    
+    };
+    return book;
+   };
+
+   var book1=book(118,"DSA","John",2019);
+   var book2=book(120,"JS","Johnny",2015);
+   document.getElementById("demo").innerHTML=book1.greeting();
+   document.getElementById("demo1").innerHTML=book2.greeting();
+</script>
+</body>
+</html>
